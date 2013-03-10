@@ -1,4 +1,4 @@
-    i 
+    
 import string
 
 #Takes in a file, and reads it, and sets it to a string. 
@@ -55,10 +55,8 @@ for word in sorted_words:
     frequency_to_word_list_dict[count] = newlist
 
 list_of_freq_keys = frequency_to_word_list_dict.keys()
+list_of_freq_keys.sort()
 high_to_low_freq_keys = list_of_freq_keys[::-1]
-
-
-#
 
 for number in high_to_low_freq_keys:
 #is value list a variable or a list?
