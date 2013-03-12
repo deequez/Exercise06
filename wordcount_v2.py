@@ -16,15 +16,17 @@ create_words = cleanup_data.split()
 
 wordcount_dict = {}
 
-for x in create_words:
-    if x not in wordcount_dict:
-        wordcount_dict[x] = 1
-    elif x in wordcount_dict:
-        wordcount_dict[x] += 1
+for word in create_words:
+	wordcount_dict[word] = wordcount_dict.get(word,0) + 1   
 
-for key, value in wordcount_dict.iteritems():
-	print key, value
+# for key, value in wordcount_dict.iteritems():
+# 	print key, value
+
+list_of_dict = sorted(wordcount_dict.items())
 
 
-# ordered_dict =  OrderedDict(sorted(wordcount_dict.items(), key=lambda t: t[0]))
-# print ordered_dict
+# Learn about lambda, etc.
+# http://stackoverflow.com/questions/13781981/lambda-function-in-sorted-dictionary-list-comprehension
+
+
+print sorted(list_of_dict, key=lambda t: t[1], reverse=True)
